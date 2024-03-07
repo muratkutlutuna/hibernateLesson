@@ -42,7 +42,9 @@ public class RunnerSave04 {
         //set
         dairy1.setStudent(student1);
         dairy2.setStudent(student2);
-        dairy3.setStudent(student3);
+//        dairy3.setStudent(student3);commented out to understand INNER JOIN
+
+//        dairy1.setStudent(student2);
 
 
         Configuration con = new Configuration().

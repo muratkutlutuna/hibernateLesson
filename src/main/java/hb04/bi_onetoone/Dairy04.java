@@ -1,7 +1,6 @@
 package hb04.bi_onetoone;
 
 
-import hb03.uni_onetoone.Student03;
 
 import javax.persistence.*;
 
@@ -14,7 +13,7 @@ public class Dairy04 {
     private String name;
 
     @OneToOne//student_id
-    @JoinColumn
+    @JoinColumn(name="std_id",unique=true) //to avoid duplication
     private Student04 student;
 
     //getter and setter
