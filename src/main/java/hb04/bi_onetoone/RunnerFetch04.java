@@ -20,7 +20,7 @@ public class RunnerFetch04 {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
-        //get student and dairy by Id using get method
+        //get a student and dairy by ID using get method
         Student04 std1 = session.get(Student04.class, 1001);
         System.out.println("std1 = " + std1);
 
@@ -42,16 +42,16 @@ public class RunnerFetch04 {
         List<Object[]> resultList = session.createQuery(hql1).getResultList();
         resultList.forEach(s-> System.out.println(Arrays.toString(s)));
 //        List<Student04> resultList1 = session.createQuery(hql1, Student04.class).getResultList();
-//      we can not set anything like above line of code, because the expected result is not Student04 class
+//      we cannot set anything like the above line of code, because the expected result is not Student04 class
         //it is just names of both tables.
 
         System.out.println("************* LEFT JOIN *************");
         String hql2 = "SELECT s.name, d.name FROM Student04 s LEFT JOIN FETCH Dairy04 d ON s.id = d.student.id";
         List<Object[]> resultList2 = session.createQuery(hql2).getResultList();
         resultList2.forEach(s-> System.out.println(Arrays.toString(s)));
-
+ 
         System.out.println("======== sql query LEFT JOIN ===========");
-        //sql version of above query
+        //sql version of the above query
         String sqlQuery = "SELECT s.std_name, d.name FROM t_student04 s LEFT JOIN t_dairy04 d ON s.id=d.std_id";
         List<Object[]> sqlResultList = session.createSQLQuery(sqlQuery).getResultList();
         sqlResultList.forEach(s-> System.out.println(Arrays.toString(s)));

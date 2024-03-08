@@ -38,6 +38,10 @@
 
         <property name="format_sql">true</property>
 
+        <!-- This will map entity classes withount using addAnnotatedClass() method -->
+        <mapping class="hb05.uni_manytoone.University"/>
+        <mapping class="hb05.uni_manytoone.Student05"/>
+
     </session-factory>
 
 </hibernate-configuration>
