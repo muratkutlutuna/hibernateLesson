@@ -14,7 +14,8 @@ public class Student06 {
     private String name;
     private int grade;
     @OneToMany
-    @JoinColumn
+//    @JoinColumn//joinColumn will force hibernate not to create one to many table, and it will create
+    //foreign key on the other side
     private List<Book06> bookList=new ArrayList<>();
 
     //getter and setter

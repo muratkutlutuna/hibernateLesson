@@ -1,10 +1,7 @@
 package hb06.uni_onetomany;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "t_book06")
@@ -13,6 +10,9 @@ public class Book06 {
     private int id;
     @Column(name = "book_name")
     private String name;
+
+    @ManyToOne
+    private Student06 student;
 
     //getter and setter
 
