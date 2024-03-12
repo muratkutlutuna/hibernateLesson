@@ -26,15 +26,23 @@ public class RunnerSave07 {
         //Book objects
         Book07 book1 = new Book07();
         book1.setId(101);
-        book1.setName("Math Book");
+        book1.setName("Java Book");
 
         Book07 book2 = new Book07();
         book2.setId(102);
-        book2.setName("Chemistry Book");
+        book2.setName("Math Book");
 
         Book07 book3 = new Book07();
         book3.setId(103);
-        book3.setName("Physics Book");
+        book3.setName("Hibernate Book");
+
+        Book07 book4 = new Book07();
+        book4.setId(104);
+        book4.setName("Art Book");
+
+        Book07 book5 = new Book07();
+        book5.setId(105);
+        book5.setName("Chemistry Book");
 
         //set books to student class
         //when we use mappedBy, the owner of relation will be books side
@@ -45,6 +53,8 @@ public class RunnerSave07 {
         book1.setStudent(student1);
         book2.setStudent(student1);
         book3.setStudent(student2);
+        book4.setStudent(student2);
+        book5.setStudent(student3);
 
 
         Configuration con = new Configuration().
@@ -63,6 +73,8 @@ public class RunnerSave07 {
         session.save(book1);
         session.save(book2);
         session.save(book3);
+        session.save(book4);
+        session.save(book5);
 
 
 

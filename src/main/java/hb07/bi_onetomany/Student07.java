@@ -13,9 +13,9 @@ public class Student07 {
     @Column(name="std_name",nullable = false)
     private String name;
     private int grade;
-    @OneToMany(mappedBy = "student")// mappedby sets the owner of relation
+    @OneToMany(mappedBy = "student", orphanRemoval = true, cascade = CascadeType.REMOVE)// mappedby sets the owner of relation
 //    @JoinColumn()//this will give exception because mappedBy means set relation from the other side...
-    //It means: "I gave up, do not try to add new column on my side"
+    //It means: "I gave up, do not try to add new column on my side."
     private List<Book07> book07 = new ArrayList<>();
 
     //getter and setter
@@ -60,7 +60,7 @@ public class Student07 {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
-                ", book07=" + book07 +
+//                ", book07=" + book07 +
                 '}';
     }
 
