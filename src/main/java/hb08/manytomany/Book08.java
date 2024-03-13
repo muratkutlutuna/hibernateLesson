@@ -1,9 +1,6 @@
 package hb08.manytomany;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +10,7 @@ public class Book08 {
     @Id
     private int id;
     private String name;
-    @ManyToMany(mappedBy = "BookList")
+    @ManyToMany(mappedBy = "bookList")
     private List<Student08> students = new ArrayList<>();
 
     //getter and setter
