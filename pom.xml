@@ -13,8 +13,10 @@
         <maven.compiler.target>19</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <hibernate.version>5.6.15.Final</hibernate.version>
-        <postgresql.connector.version>42.7.2</postgresql.connector.version>
+        <hibernate.version>5.6.9.Final</hibernate.version>
+        <postgresql.connector.version>42.7.0</postgresql.connector.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <ehcache.version>3.6.3</ehcache.version>
     </properties>
     <dependencies><!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <dependency>
@@ -31,7 +33,19 @@
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${javafaker.version}</version>
+        </dependency>
+        <!--for caching-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jcache</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>${ehcache.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
     </dependencies>
